@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333333;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.game-title {
+    text-align: center;
+    width: 300px;
+    padding: 30px;
+    border-bottom: 3px solid #333333;
+    font-size: 30px;
+    margin-bottom: 0;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    row-gap: 11px;
+    max-width: 295px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.letter-box {
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    width: 45px;
+    border: 3px solid #ccc;
+}
+
+.game-status-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.loading-indicator {
+    font-size: 30px;
+    animation: spin 0.5s linear infinite;
+}
+
+.exists-correct-pos {
+    background-color: darkgreen;
+    color: white;
+}
+
+.exists-wrong-pos {
+    background-color: goldenrod;
+    color: white;
+}
+
+.does-not-exist {
+    background-color: #888;
+    color: white;
+}
+
+.invalid {
+    animation: flash-red 1s;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.win {
+    color: white;
+    animation: rainbow 1.5s infinite linear;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes flash-red {
+    5% {
+        border-color: crimson;
+        background-color: red;
+    }
+    50 % {
+        border-color: red;
+        background-color: white;
+    }
+}
+
+@keyframes rainbow {
+  100%,
+  0% {
+    background-color: rgb(255, 0, 0);
+  }
+  8% {
+    background-color: rgb(255, 127, 0);
+  }
+  16% {
+    background-color: rgb(255, 255, 0);
+  }
+  25% {
+    background-color: rgb(127, 255, 0);
+  }
+  33% {
+    background-color: rgb(0, 255, 0);
+  }
+  41% {
+    background-color: rgb(0, 255, 127);
+  }
+  50% {
+    background-color: rgb(0, 255, 255);
+  }
+  58% {
+    background-color: rgb(0, 127, 255);
+  }
+  66% {
+    background-color: rgb(0, 0, 255);
+  }
+  75% {
+    background-color: rgb(127, 0, 255);
+  }
+  83% {
+    background-color: rgb(255, 0, 255);
+  }
+  91% {
+    background-color: rgb(255, 0, 127);
+  }
+}
